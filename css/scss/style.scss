@@ -1,0 +1,143 @@
+// Fontes
+$fonte: 'Spectral', serif;
+
+// Cores
+$background: #181A1C;
+$background-btn: #fb1;
+$color: #e1e1e6;
+$color-btn: #333;
+$correct: #049b48;
+$incorrect: #a10101;
+
+// Tamanho Fonte
+@function rem($pixel, $context: 16) {
+    @return $pixel / $context + rem;
+}
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $fonte;
+}
+
+// Geral
+.button {
+    background: $background-btn;
+    color: $color-btn;
+    font-size: rem(16);
+    font-weight: bold;
+    border: 0;
+    border-radius: rem(6);
+    height: rem(48);
+    padding: 0 32px;
+
+    transition: filter 0.2s;
+
+    cursor: pointer;
+
+    &:not(:disabled):hover {
+        filter: (brightness(0.8));
+    }
+}
+
+body {
+    background: $background;
+    color: $color;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: rem(60);
+    font-size: rem(48);
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: $background-btn;
+    position: absolute;
+    bottom: 10px;
+    left: -5px;
+    border-radius: .2rem;
+    z-index: -1;
+}
+
+// Container
+.container {
+    background: $background;
+    width: 90%;
+    max-width: rem(800);
+
+    border-radius: rem(6);
+    padding: rem(16);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
+
+    .questions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: rem(24);
+
+        .question {
+            font-size: rem(24);
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .answers {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(16);
+
+            .answer:disabled {
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .button-next {
+        margin-top: rem(32);
+    }
+}
+
+// Classes Javascript
+.final-message {
+    font-size: rem(20);
+    text-align: center;
+
+    span {
+        display: block;
+        margin-top: 8px;
+    }
+}
+
+.hide {
+    display: none !important;
+}
+
+.correct {
+    background: $correct;
+}
+
+.incorrect {
+    background: $incorrect;
+}
