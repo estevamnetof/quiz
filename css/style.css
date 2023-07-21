@@ -92,6 +92,12 @@ h1::after {
   cursor: not-allowed;
 }
 
+@media (max-width: 400px) {
+  .container .questions .answers {
+    grid-template-columns: 1fr;
+  }
+}
+
 .container .button-next {
   margin-top: 2rem;
 }

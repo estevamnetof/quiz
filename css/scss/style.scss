@@ -111,6 +111,10 @@ h1::after {
             .answer:disabled {
                 cursor: not-allowed;
             }
+
+            @media (max-width: 400px) {
+                grid-template-columns: 1fr;
+            }
         }
     }
 
