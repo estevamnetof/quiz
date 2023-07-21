@@ -92,7 +92,7 @@ h1::after {
   cursor: not-allowed;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .container .questions .answers {
     grid-template-columns: 1fr;
   }
