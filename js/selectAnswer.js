@@ -1,5 +1,5 @@
-export let currentQuestionIndex = 0;
-export let totalCorrect = 0;
+let currentQuestionIndex = 0;
+let totalCorrect = 0;
 
 export default function selectAnswer(event) {
     const $nextQuestionButton = document.querySelector('.button-next');
@@ -26,3 +26,5 @@ export default function selectAnswer(event) {
     $nextQuestionButton.classList.remove('hide');
     currentQuestionIndex++;
 }
+
+export { currentQuestionIndex, totalCorrect }
